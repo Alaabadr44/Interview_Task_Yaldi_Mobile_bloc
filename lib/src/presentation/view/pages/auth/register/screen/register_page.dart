@@ -83,12 +83,13 @@ class _RegisterPageState extends State<RegisterPage> {
           listener: (ctx, state) {
             state.mapOrNull(
               success: (value) {
+
                 context.showSuccess(
                   "User registered successfully",
-                  popLoadingDialog: false,
+                  popLoadingDialog: true,
                 );
               },
-              error: (value) {
+               error: (value) {
                 context.showError(
                   value.error?.message ?? '',
                   popLoadingDialog: false,
